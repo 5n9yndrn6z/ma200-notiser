@@ -75,6 +75,11 @@ def check_ticker(name, ticker):
 
 
 def main():
+    if os.environ.get("TEST_NOTIFICATION", "false").lower() == "true":
+        send_notification("TEST", "Testnotis från GitHub Actions - kopplingen fungerar!")
+        print("Testnotis skickad.")
+        return
+
     for name, ticker in TICKERS.items():
         check_ticker(name, ticker)
 
