@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install yfinance pandas requests
-      - run: python ma200_notiser.py
+      - run: pip install yfinance pandas requests lxml
+      - run: python ma200_stor.py
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           TEST_NOTIFICATION: ${{ inputs.test_notification }}
